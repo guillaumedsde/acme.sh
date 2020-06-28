@@ -1,4 +1,4 @@
-FROM spritsail/alpine:3.11
+FROM alpine:latest
 
 ARG VERSION=master
 
@@ -13,6 +13,7 @@ RUN apk --no-cache add -f \
     bind-tools \
     curl \
     socat \
+    tini \
     && \
     curl -sSL https://github.com/Neilpang/acme.sh/archive/${VERSION}.tar.gz | tar xz --strip-components=1 && \
     chmod 755 ./acme.sh && \
@@ -24,12 +25,22 @@ WORKDIR /acme.sh
 
 SHELL ["/bin/sh", "-c"]
 
+LABEL org.label-schema.build-date=$BUILD_DATE \
+    org.label-schema.name="acme.sh" \
+    org.label-schema.description="acme.sh docker container on alpine linux" \
+    org.label-schema.url="https://guillaumedsde.gitlab.io/docker-acme.sh/" \
+    org.label-schema.vcs-ref=$VCS_REF \
+    org.label-schema.version=$VERSION \
+    org.label-schema.vcs-url="https://github.com/guillaumedsde/docker-acme.sh" \
+    org.label-schema.vendor="guillaumedsde" \
+    org.label-schema.schema-version="1.0"
+
 ENTRYPOINT \
     set -- "$0" "$@"; \
     if [ "$1" = "daemon" ]; then \
     # insert a crontab entry to run every hour, starting an hour from now
     echo "$(( $(date +%-M -d 'now') + 1 )) 0 * * * acme.sh --cron" | tee /dev/stderr | crontab -; \
-    exec /sbin/tini -- crond -f -d6; \
+    exec tini -- crond -f -d6; \
     else \
     exec -- acme.sh "$@"; \
     fi

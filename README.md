@@ -7,23 +7,25 @@ It should behave almost exactly the same as the "official" container, but open a
 
 ## Usage
 
-*As a CLI*
+### As a CLI
+
 ```sh
 # issue a certificate
 docker run --rm -it -v ~/certs:/acme.sh \
-    spritsail/acme.sh --issue -d example.com --standalone
+    guillaumedsde/acme.sh --issue -d example.com --standalone
 ```
 
 ```sh
 # issue a certificate using dnsapi
 docker run --rm -it -v ~/certs:/acme.sh -e CF_Email=.. \
-    spritsail/acme.sh --issue -d example.com --dns dns_cf ..
+    guillaumedsde/acme.sh --issue -d example.com --dns dns_cf ..
 ```
 
-*As a daemon*
+### As a daemon
+
 ```sh
 # start the daemon
 docker run --rm -it -v ~/certs:/acme.sh \
     --name=acme.sh \
-    spritsail/acme.sh daemon
+    guillaumedsde/acme.sh daemon
 ```
