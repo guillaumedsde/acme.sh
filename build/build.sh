@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 LATEST_VERSION="$(git ls-remote https://github.com/acmesh-official/acme.sh.git HEAD | awk '{ print $1}')"
 
@@ -15,7 +16,7 @@ fi
 
 docker buildx build . \
     --platform="${BUILDX_PLATFORM}" \
-    --build-arg BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+    --build-arg BUILD_DATE="$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
     --build-arg VCS_REF="${VERSION}" \
     "${TAGS}" \
     --push
