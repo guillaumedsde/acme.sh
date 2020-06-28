@@ -85,6 +85,5 @@ A couple of projects really helped me out while developing this container:
 
 - 💽 [acme.sh](https://github.com/Neilpang/acme.sh) _the_ awesome software
 - 💽 [spritsail/acme.sh](https://github.com/spritsail/acme.sh) a much needed improvement to the base acme.sh image
-- 🏁 [s6-overlay](https://github.com/just-containers/s6-overlay) A simple, relatively small yet powerful set of init script for managing processes (especially in docker containers)
 - 🏔️ [Alpine Linux](https://alpinelinux.org/) an awesome lightweight secure linux distribution used as the base for this container
 - 🐋 The [Docker](https://github.com/docker) project (of course)
