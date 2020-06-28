@@ -5,12 +5,12 @@ LATEST_VERSION="$(git ls-remote https://github.com/Neilpang/acme.sh.git HEAD | a
 VERSION=${VERSION:-LATEST_VERSION}
 
 if [ "${CI_COMMIT_REF_NAME}" = "master" ]; then
-    TAGS=" -t ${CI_REGISTRY_USER}/acme.sh:${VERSION} -t ${CI_REGISTRY_USER}/acme.sh:latest "
+    TAGS=" -t ${CI_REGISTRY_USER}/${DOCKERHUB_REPO_NAME}:${VERSION} -t ${CI_REGISTRY_USER}/${DOCKERHUB_REPO_NAME}:latest "
 else
     # cleanup branch name
     BRANCH="$(echo "${CI_COMMIT_REF_NAME}" | tr / _)"
     # tag image with branch name
-    TAGS="-t ${CI_REGISTRY_USER}/acme.sh:${BRANCH}"
+    TAGS="-t ${CI_REGISTRY_USER}/${DOCKERHUB_REPO_NAME}:${BRANCH}"
 fi
 
 docker buildx build . \

@@ -33,6 +33,7 @@ dockerhub-readme:
   stage: deploy
   variables:
     README_PATH: ./README.md
+    DOCKERHUB_USERNAME: ${CI_REGISTRY_USER}
   image:
     name: sheogorath/readme-to-dockerhub:latest
     entrypoint: [""]
