@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LATEST_VERSION="$(git ls-remote https://github.com/Neilpang/acme.sh.git HEAD | awk '{ print $1}')"
+LATEST_VERSION="$(git ls-remote https://github.com/acmesh-official/acme.sh.git HEAD | awk '{ print $1}')"
 
 VERSION=${VERSION:-LATEST_VERSION}
 

@@ -15,7 +15,7 @@ RUN apk --no-cache add -f \
     socat \
     tini \
     && \
-    curl -sSL https://github.com/Neilpang/acme.sh/archive/${VERSION}.tar.gz | tar xz --strip-components=1 && \
+    curl -sSL https://github.com/acmesh-official/acme.sh/archive/${VERSION}.tar.gz | tar xz --strip-components=1 && \
     chmod 755 ./acme.sh && \
     rm -rf .github .travis.yml Dockerfile README.md && \
     ln -sfv /opt/acme.sh/acme.sh /usr/local/bin
