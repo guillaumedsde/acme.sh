@@ -1,14 +1,13 @@
 # [🐋 docker-acme.sh](https://github.com/guillaumedsde/docker-acme.sh)
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/guillaumedsde/docker-acme.sh)](https://gitlab.com/guillaumedsde/docker-acme.sh/-/pipelines)
-[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/guillaumedsde/docker-acme.sh)](https://gitlab.com/guillaumedsde/docker-acme.sh/-/pipelines)
+[![Gitlab pipeline status](https://img.shields.io/gitlab/pipeline/guillaumedsde/docker-acme.sh/master)](https://gitlab.com/guillaumedsde/docker-acme.sh/-/pipelines)
 [![Website](https://img.shields.io/website?label=documentation&url=https%3A%2F%2Fguillaumedsde.gitlab.io%2Fdocker-acme.sh%2F)](https://guillaumedsde.gitlab.io/docker-acme.sh/)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/27a9ea4b0a3f4e04b3b95fcd1086471f)](https://www.codacy.com/manual/guillaumedsde/docker-acme.sh?utm_source=gitlab.com&utm_medium=referral&utm_content=guillaumedsde/docker-acme.sh&utm_campaign=Badge_Grade)
-[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/guillaumedsde/docker-acme.sh)](https://hub.docker.com/r/guillaumedsde/acme.sh)
-[![Docker Pulls](https://img.shields.io/docker/pulls/guillaumedsde/docker-acme.sh)](https://hub.docker.com/r/guillaumedsde/acme.sh)
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/guillaumedsde/acme.sh)](https://hub.docker.com/r/guillaumedsde/acme.sh)
+[![Docker Pulls](https://img.shields.io/docker/pulls/guillaumedsde/acme.sh)](https://hub.docker.com/r/guillaumedsde/acme.sh)
 [![GitHub stars](https://img.shields.io/github/stars/guillaumedsde/docker-acme.sh?label=Github%20stars)](https://github.com/guillaumedsde/docker-acme.sh)
 [![GitHub watchers](https://img.shields.io/github/watchers/guillaumedsde/docker-acme.sh?label=Github%20Watchers)](https://github.com/guillaumedsde/docker-acme.sh)
-[![Docker Stars](https://img.shields.io/docker/stars/guillaumedsde/docker-acme.sh)](https://hub.docker.com/r/guillaumedsde/acme.sh)
+[![Docker Stars](https://img.shields.io/docker/stars/guillaumedsde/acme.sh)](https://hub.docker.com/r/guillaumedsde/acme.sh)
 [![GitHub](https://img.shields.io/github/license/guillaumedsde/docker-acme.sh)](https://github.com/guillaumedsde/docker-acme.sh/blob/master/LICENSE.md)
 
 [acme.sh](https://github.com/Neilpang/acme.sh) is an ACME protocol client written in sh for automatically issuing certificates from Let's Encrypt.
@@ -59,7 +58,6 @@ docker run \
 # start the daemon
 docker run \
     --user $(id -u):$(id -g) \
-    --rm \
     -it \
     -v ~/certs:/acme.sh \
     guillaumedsde/acme.sh \
