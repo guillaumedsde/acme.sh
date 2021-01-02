@@ -15,6 +15,7 @@ RUN apk --no-cache add -f \
     socat \
     tini \
     tar \
+    busybox-suid \
     && \
     curl -sSL https://github.com/acmesh-official/acme.sh/archive/${VERSION}.tar.gz | tar xz --strip-components=1 && \
     chmod 755 ./acme.sh && \
